@@ -1,0 +1,423 @@
+* , h1{
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+h1 {
+    margin-top: 110px; /* 50pxのマージンを追加。必要に応じて調整してください */
+    text-align: center;
+}
+
+body{
+    background-color: #ffcccc;
+}
+.welcome{
+    margin: 0;      /* 余白をなくして画面全体を使う */
+    height: 100vh;  /* 画面の高さに固定 */
+    overflow: hidden;  /* スクロールを防ぐ */
+}
+.welcome-a{
+    width: 230px;
+    text-align: center;
+}
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /* 追加: コンテンツボックスの外側にパディングとボーダーが来るように設定 */
+    height: 100vh;
+    background-color: #ffcccc;
+}
+
+.bg-custom{
+    background-color: #555;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color: #ffffff;
+}
+.dropdown-menu{
+    background-color: #343a40;
+    border: none;
+}
+.dropdown-item{
+    color: #ffffff;
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.container{
+    display: flex;           /* Flexboxを有効にする */
+    justify-content: center; /* 水平方向の中央にアイテムを配置 */
+    align-items: center;     /* 垂直方向の中央にアイテムを配置 */
+    flex-direction: column; 
+    padding: 0 20px; /* 上下にはパディングを付けず、左右に20pxのパディングを付ける */
+    max-width: 1400px; /* 必要に応じて最大幅を設定することで、大きな画面ではコンテンツがあまり広がらないように制御します */
+    min-height: 100vh;
+    margin: 0 auto; /* 左右のマージンを自動にして、コンテンツを中央に配置 */
+    background-color: #ffcccc;
+    border-radius: 20px;
+}
+
+.container h2{
+    margin-top: 5rem;
+}
+
+.navbar{
+    opacity: 0.9;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;  /* これを追加してコンテナが常にフル幅になるようにします */
+}
+
+.container .recipe-card a {
+    text-decoration: none; 
+    color: inherit;        
+    display: inline-block;        /* inline-blockを上書き */ 
+    padding: 0;            /* パディングをリセット */
+    background-color: transparent;  /* 背景色をリセット */
+    border-radius: 0;     /* ボーダーの角をリセット */
+    border: none;         /* ボーダーをリセット */
+    transition: none;     /* トランジションをリセット */
+    font-size: inherit;   /* フォントサイズを継承 */
+    margin: 0;            /* 余白をリセット */
+}
+
+.container a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+
+.centered-link {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+label {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+.image-container img {
+    margin: 0;
+    padding: 0;
+    border: none;
+    vertical-align: middle; /* 他の要素との縦方向の位置を中央に合わせる */
+    position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   width: 100%;
+   height: 100%;
+}
+.image-container{
+    margin: 0;
+    padding: 0;
+}
+.hidden-input {
+    display: none;
+}
+.image-container {
+    width: 128px;
+    height: 128px;
+    position: relative;
+    margin-bottom: 20px;
+}
+/* 非活性状態の画像は常に表示 */
+.inactive-image {
+    display: block;
+}
+.active-image {
+    display: none;
+}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+button[type="submit"] {
+    margin: auto;
+    display: block;
+}
+/* 活性状態の画像はデフォルトで非表示 */
+
+
+/* ラジオボタンが選択されたら、非活性状態の画像を非表示にし、活性状態の画像を表示 */
+.hidden-input:checked + .image-container .inactive-image {
+    
+    display: none;
+}
+
+.hidden-input:checked + .image-container .active-image {
+    display: block;
+}
+
+img.responsive-image {
+    width: 90%;
+    height: 50%;  /* または固定の高さ */
+    object-fit: cover;
+    border-radius: 10px;
+    padding-bottom: 10px;
+  }
+
+  .material-container {
+    max-height: calc(1.5em * 5); /* 1行の高さ(例: 1.5em) × 5行 */
+    overflow-y: auto; /* 垂直方向のスクロールを有効にする */
+    
+    background-color: #ffffff33;
+    border-radius: 10px;
+    margin-bottom: 20px; /* 20pxの下部マージンを追加。この値は必要に応じて調整してください */
+    width: 90%;
+}
+
+/* オプショナル: スクロールバーをカスタマイズするスタイルも追加できます */
+.material-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.material-container::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 10px;
+
+}
+
+.material-container::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.button{
+    display: inline-block;
+    width: 200px;            /* 固定の幅を指定 */
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0 auto; /* 20pxの上部マージンを追加。この値は必要に応じて調整してください */
+
+}
+
+
+.recipe-title {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.recipe-image {
+ /*    flex-shrink: 0; 画像が縮小しないようにする */
+    width: 160px;
+    height: 140px;
+    object-fit: cover;
+}
+
+.recipe-description {
+    font-size: 14px;
+}
+
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+
+
+.recipe-card {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    border-bottom: 1px solid #e2e8f0;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: space-between;
+    margin-bottom: 20px; /* ここに希望の余白の大きさを指定します */
+}
+
+.content-wrapper {
+    display: flex; /* テキストコンテンツとボタン群を横並びにする */
+    gap: 20px;
+    flex: 1; /* 余剰のスペースを取得する */
+    align-items: center; /* 中央揃え */
+}
+
+.alert-danger {
+    color: #bd1e2e;
+    background-color: #f3979f;
+    border-color: #f5c6cb;
+}
+
+.recipe-text-content {
+    padding: 10px;
+}
+
+
+.list-none{
+    padding: 0;
+}
+
+.recipe-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.recipe-text-content {
+    flex-grow: 1;
+    /* padding-left: 1em; */
+    flex-basis: 70%;  /* これにより、テキストは常に全体の70%を取得する */
+}
+
+.recipe-text-content h2{
+    margin-top: 0;
+}
+
+
+/* 通常のボタン */
+.button {
+    background-color: #3490dc;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #2779bd;
+}
+
+.delete-button {
+    background-color: #dc3434;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1em;
+    width: 120px;
+}
+.favorite-button {
+    background-color: #3490dc;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1em;
+    width: 120px;
+}
+.favorite-button:hover {
+    background-color: #2779bd;
+}
+
+.section {
+    margin-bottom: 2em;
+    padding: 1em;
+    box-shadow: 0 4px 20px 12px rgba(0, 0, 0, 0.2);
+    width: 90%; /* 画面の80%の幅に設定 */
+    max-width: 1300px; /* 幅の最大値を1200pxに設定 */
+
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.25em;
+    margin-bottom: 1em;
+}
+
+.scroll-container {
+    max-height: calc(2.5 * 150px);  /* 例: max-height: calc(2.5 * 150px); */
+    overflow-y: auto;
+}
+
+/* 共通のスタイル */
+.modal-dialog {
+    max-width: 90%;
+    margin: 1.75rem auto;
+}
+
+/* 画面の幅が最大579pxのときのスタイル */
+@media (max-width: 499px) {
+    /* この範囲で特有のスタイルを追加 */
+    .modal-dialog {
+        max-width: 80%;
+        margin: 1.75rem auto;
+    }
+    .recipe-image {
+        margin-bottom: 10px;
+        width: 250px;
+        height: 145px;
+    }
+}
+
+/* 画面の幅が500px以上767px以下のときのスタイル */
+@media (min-width: 500px) and (max-width: 767px) {
+    /* この範囲で特有のスタイルを追加 */
+    /* 例： */
+    .modal-dialog {
+        max-width: 80%;
+        margin: 1.5rem auto;
+    }
+
+}
+
+/* 画面の幅が768px以上のときのスタイル */
+@media (min-width: 768px) {
+    .modal-dialog {
+        max-width: 80%;
+        margin: 1.5rem auto;
+    }
+    .recipe-image {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 10px;
+    }
+}
+
+/* 画面の幅が1024px以上のときのスタイル */
+@media (min-width: 1024px) {
+    .modal-dialog {
+        max-width: 80%;
+        margin: 1.5rem auto;
+    }
+    .recipe-image {
+        width: 170px;
+        height: 170px;
+    }
+}
+
+/* 画面の幅が1440px以上のときのスタイル */
+@media (min-width: 1440px) {
+    .modal-dialog {
+        max-width: 80%;
+        margin: 1.5rem auto;
+    }
+    .recipe-image {
+        width: 200px;
+        height: 200px;
+    }
+}
