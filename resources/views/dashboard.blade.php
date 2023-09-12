@@ -85,7 +85,7 @@ $(document).ready(function(){
     <div class="container">
         <!-- Search Recipe Button -->
         <div class="flex-container">
-            <a class="button" href="{{ route('recipe.conditions') }}" style="margin-top: 5rem;">レシピを探す</a>
+            <a class="button" href="{{ route('recipe.conditions') }}" style="margin-top: 2rem;">レシピを探す</a>
         </div>
         
     @if (session('success'))
@@ -103,7 +103,7 @@ $(document).ready(function(){
         <!-- 履歴表示のセクション -->
         <div class="section">
             <div>
-                <h3 class="title">閲覧履歴</h3>
+                <h3 class="title">開いた履歴</h3>
                 @if($histories->isEmpty())
                     <p>履歴はまだありません。</p>
                 @else
@@ -126,7 +126,7 @@ $(document).ready(function(){
                             <input type="hidden" name="recipe_title" value="{{ $history->recipe_title }}">
                             <input type="hidden" name="recipe_image" value="{{ $history->full_image_url }}">
                             <button type="submit" class="favorite-button">
-                                {{ $history->isFavorited ? 'お気に入り解除' : 'お気に入り' }}
+                                {{ $history->isFavorited ? 'お気に入り解除' : 'お気に入り追加' }}
                             </button>
                         </form>
                     </li>
@@ -159,7 +159,7 @@ $(document).ready(function(){
                         <form action="{{ route('favorite.delete', $favorite->recipe_id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="delete-button">削除</button>
+                            <button type="submit" class="delete-button">お気に入り削除</button>
                         </form>
                 </li>
             @endforeach

@@ -24,7 +24,10 @@ class ApiController extends Controller
     //getCategoryIdメソッドから選択されたIDを追加する
     $categoryId = $this->getCategoryId($client, $applicationId, $selectedCategory);
     if (!$categoryId) {
-        return 'Error: Could not fetch category ID for meat.';
+         // エラーメッセージをセッションに追加
+         session()->flash('error', '1つ選択してください。');
+         // フォームページにリダイレクト
+         return redirect()->back();
     }
 
     // 楽天レシピカテゴリー別ランキングAPIでランキングを取得する

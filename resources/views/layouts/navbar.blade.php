@@ -14,7 +14,7 @@
      <ul class="navbar-nav mr-auto">
         @auth
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('dashboard') }}">マイメニュー</a>
+                <a class="nav-link" href="{{ route('dashboard') }}">マイメニューへ戻る</a>
             </li>
 
             @if(Route::currentRouteName() != 'welcome')

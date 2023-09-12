@@ -23,10 +23,26 @@
 
                 // 既にボタンのテキストが「マイページへ戻る」または「トップへ戻る」なら、対応するページに遷移する
                 if (btn.innerText === "マイページへ戻る") {
-                    window.location.href = "{{ route('dashboard') }}";
+                    fetch(clearSessionUrl, {
+                        method: 'GET',
+                        headers: {
+                            'Skip-Redirect': 'true'
+                        }
+                    }).then(response => {
+                        // セッションがクリアされた後、ダッシュボードにリダイレクト
+                        window.location.href = "{{ route('dashboard') }}";
+                    });
                     return;
                 } else if (btn.innerText === "トップへ戻る") {
-                    window.location.href = "{{ route('welcome') }}";  // トップページのルートを指定してください
+                    fetch(clearSessionUrl, {
+                        method: 'GET',
+                        headers: {
+                            'Skip-Redirect': 'true'
+                        }
+                    }).then(response => {
+                        // セッションがクリアされた後、ダッシュボードにリダイレクト
+                        window.location.href = "{{ route('welcome') }}";
+                    });
                     return;
                 }
 
@@ -75,7 +91,7 @@
 
 
 <div class="container">
-    <h2>本日のレシピ</h2>
+    <h1>本日のレシピ</h1>
     <h2 class="text-center">{{ $randomItem['recipeTitle'] }}</h2>
     <img src="{{ $randomItem['foodImageUrl'] }}" alt="レシピの画像" class="responsive-image">
     <h3 class="text-center">必要材料</h3>

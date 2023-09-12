@@ -7,6 +7,18 @@ h1 {
     text-align: center;
 }
 
+.credit{
+    list-style: none;
+    text-decoration: none;
+    text-align: end;
+    padding-right: 50px;
+    font-size: 20px;
+}
+
+a.button{
+    margin-top: 2rem;
+}
+
 body{
     background-color: #ffcccc;
 }
@@ -18,6 +30,27 @@ body{
 .welcome-a{
     width: 230px;
     text-align: center;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.about{
+    color: rgb(109, 101, 101);
+}
+
+.text-container{
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    
 }
 html {
     margin: 0;
@@ -57,9 +90,22 @@ html {
     background-color: #ffcccc;
     border-radius: 20px;
 }
-
+.top-container{
+    display: flex;           /* Flexboxを有効にする */
+    justify-content: center; /* 水平方向の中央にアイテムを配置 */
+    align-items: center;     /* 垂直方向の中央にアイテムを配置 */
+    flex-direction: column; 
+    padding: 0 20px; /* 上下にはパディングを付けず、左右に20pxのパディングを付ける */
+    max-width: 1400px; /* 必要に応じて最大幅を設定することで、大きな画面ではコンテンツがあまり広がらないように制御します */
+    margin: 0 auto; /* 左右のマージンを自動にして、コンテンツを中央に配置 */
+    background-color: #ffcccc;
+    border-radius: 20px;
+}
+.container h1{
+    margin-top: 4rem;
+}
 .container h2{
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
 .navbar{
@@ -360,9 +406,19 @@ img.responsive-image {
     margin: 1.75rem auto;
 }
 
-/* 画面の幅が最大579pxのときのスタイル */
-@media (max-width: 499px) {
-    /* この範囲で特有のスタイルを追加 */
+/* 画面の幅が最大519pxのときのスタイル */
+@media (max-width: 519px) {
+    .credit{
+        padding-right: 10px;
+    }
+    .recipe-card {
+        justify-content: center;
+    }
+
+    .recipe-text-content {
+        text-align: center;
+    }
+
     .modal-dialog {
         max-width: 80%;
         margin: 1.75rem auto;
@@ -372,17 +428,22 @@ img.responsive-image {
         width: 250px;
         height: 145px;
     }
+    .top-container{
+        height: 140px;
+    }
 }
 
 /* 画面の幅が500px以上767px以下のときのスタイル */
-@media (min-width: 500px) and (max-width: 767px) {
+@media (min-width: 520px) and (max-width: 767px) {
     /* この範囲で特有のスタイルを追加 */
     /* 例： */
     .modal-dialog {
         max-width: 80%;
         margin: 1.5rem auto;
     }
-
+    .top-container{
+        height: 350px;
+    }
 }
 
 /* 画面の幅が768px以上のときのスタイル */
@@ -396,6 +457,9 @@ img.responsive-image {
         height: 140px;
         margin-bottom: 10px;
     }
+    .top-container{
+        height: 350px;
+    }
 }
 
 /* 画面の幅が1024px以上のときのスタイル */
@@ -408,6 +472,9 @@ img.responsive-image {
         width: 170px;
         height: 170px;
     }
+    .top-container{
+        height: 450px;
+    }
 }
 
 /* 画面の幅が1440px以上のときのスタイル */
@@ -419,5 +486,9 @@ img.responsive-image {
     .recipe-image {
         width: 200px;
         height: 200px;
+    }
+
+    .top-container{
+        height: 650px;
     }
 }

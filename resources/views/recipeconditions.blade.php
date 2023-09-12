@@ -5,6 +5,11 @@
     <body>
         <div class="container">
             <h2>レシピ条件選択</h2>
+            @if(session('error'))
+                <div style="color:red;">
+                    {{ session('error') }}
+                </div>
+            @endif
             <form action="{{ route('recipe.decide') }}" method="POST">
                 @csrf
                 <div class="flex-container">
@@ -15,7 +20,7 @@
                             <img src="/img/meat-cooked.png" alt="Meat Active" class="active-image">
                         </label>
                     </div>
-                    <div>
+                    <div style="height:118px;">
                         <!-- 魚カテゴリーの選択項目 -->
                         <input type="radio" id="fish" name="category" value="fish" class="hidden-input">
                         <label for="fish" class="image-container">

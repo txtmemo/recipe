@@ -7,17 +7,20 @@ use Session;
 
 class RecipeController extends Controller
 {
-    public function clearSessionAndRedirect()
+    public function clearSessionAndRedirect(Request $request)
     {
-
         // セッション `visitedRecipeResult` もクリア
         Session::forget('visitedRecipeResult');
         // セッションをクリア
         Session::forget('selected_recipe');
 
+        // ヘッダーに基づいてリダイレクトをスキップするかどうかを判定
+        if ($request->header('Skip-Redirect') === 'true') {
+            return response()->json(['success' => true]);
+        }
+
         // recipeconditions.blade.phpにリダイレクト
         return redirect()->route('recipe.conditions');
-        // 必要なヘッダーをレスポンスに追加
     }
     
 
