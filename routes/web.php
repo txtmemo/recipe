@@ -69,3 +69,4 @@ Route::delete('/favorites/{recipe}', [FavoriteController::class, 'destroy'])->na
 Route::post('/favorites/{recipe_id}/memo', [FavoriteController::class, 'storeMemo'])->name('favorite.memo');
 Route::put('/favorites/{recipe_id}/memo', [FavoriteController::class, 'updateMemo'])->name('favorite.memo.update');
 Route::delete('/favorites/{recipe_id}/memo', [FavoriteController::class, 'deleteMemo'])->name('favorite.memo.delete');
+Route::post('/favorites/{favorite}/addMemo', [FavoriteController::class, 'addMemo'])->name('favorites.addMemo');

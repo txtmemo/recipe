@@ -118,7 +118,6 @@ $(document).ready(function(){
                         <a href="{{ $baseUrl . $history->recipe_id }}" target="_blank">
                             <h2>{{ $history->recipe_title }}</h2>
                             </a>
-                            <p>レシピの説明など...</p>
                         </div>
                         <form method="POST" action="{{ route('favorite.store') }}">
                             @csrf
@@ -153,7 +152,9 @@ $(document).ready(function(){
                             <a href="{{ $baseUrl . $favorite->recipe_id }}" target="_blank">
                                 <h2>{{ $favorite->recipe_title }}</h2>
                             </a>
-                            <p>レシピの説明など...</p>
+                            @if(!empty($favorite->memo))
+                                <p>メモ：{{ $favorite->memo }}</p>
+                            @endif
                         </div>
                         <!-- お気に入りを削除するボタン -->
                         <form action="{{ route('favorite.delete', $favorite->recipe_id) }}" method="POST">
@@ -168,7 +169,7 @@ $(document).ready(function(){
         </div>
     </div>
 
-    <!-- モーダルウィンドウの内容 -->
+    <!--履歴一覧 モーダルウィンドウの内容 -->
     <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -189,7 +190,6 @@ $(document).ready(function(){
                         <a href="{{ $baseUrl . $history->recipe_id }}" target="_blank">
                                 <h2>{{ $history->recipe_title }}</h2>
                                 </a>
-                                <p>レシピの説明など...</p>
                             </div>
                             <form method="POST" action="{{ route('favorite.store') }}">
                                 @csrf
@@ -228,10 +228,13 @@ $(document).ready(function(){
                             <div class="recipe-text-content">
                             <a href="{{ $baseUrl . $favorite->recipe_id }}" target="_blank" class="d-inline-block">
                                     <h2>{{ $favorite->recipe_title }}</h2>
-                                </a>
-                                <p>レシピの説明など...</p>
+                            </a>
                             </div>
-                            <!-- ここに追加の機能やボタンを追加できます。 -->
+                            <form action="{{ route('favorites.addMemo', $favorite->id) }}" method="POST">
+                                @csrf
+                                <textarea name="memo" placeholder="メモを追加">{{ $favorite->memo }}</textarea>
+                                <button type="submit">保存</button>
+                            </form>
                         </li>
                     @endforeach
                     </ul>

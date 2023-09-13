@@ -74,4 +74,14 @@ class FavoriteController extends Controller
         $baseURL = config('services.recipe.image_base_url');
         return $baseURL . $imageName;
     }
+
+    public function addMemo(Request $request, $favoriteId)
+    {
+        $favorite = RecipeFavorite::findOrFail($favoriteId);
+        $favorite->memo = $request->input('memo');
+        $favorite->save();
+
+        $message = 'メモを追加しました！';
+        return redirect()->route('dashboard')->with('success', $message);
+    }
 }

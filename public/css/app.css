@@ -296,7 +296,7 @@ img.responsive-image {
     border-bottom: 1px solid #e2e8f0;
     flex-wrap: wrap;
     padding: 0;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-bottom: 20px; /* ここに希望の余白の大きさを指定します */
 }
 
@@ -403,7 +403,12 @@ img.responsive-image {
 /* 共通のスタイル */
 .modal-dialog {
     max-width: 90%;
-    margin: 1.75rem auto;
+}
+
+textarea[name="memo"] {
+    width: 100%; /* モーダルの幅に合わせて調整 */
+    max-width: 100%; /* 必要に応じて調整 */
+    /* 必要に応じて他のスタイルも追加 */
 }
 
 /* 画面の幅が最大519pxのときのスタイル */
@@ -425,7 +430,7 @@ img.responsive-image {
     }
     .recipe-image {
         margin-bottom: 10px;
-        width: 250px;
+        width: 210px;
         height: 145px;
     }
     .top-container{
