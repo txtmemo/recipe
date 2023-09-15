@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * , h1{
     font-family: 'Kosugi Maru', sans-serif;
 }
@@ -332,7 +336,7 @@ img.responsive-image {
 .recipe-text-content {
     flex-grow: 1;
     /* padding-left: 1em; */
-    flex-basis: 70%;
+    flex-basis: 70%;  /* これにより、テキストは常に全体の70%を取得する */
 }
 
 .recipe-text-content h2{
@@ -406,11 +410,9 @@ img.responsive-image {
 }
 
 textarea[name="memo"] {
-    width: 100%; 
-    max-width: 100%; 
-}
-.memo{
-    font-weight:bold;
+    width: 100%; /* モーダルの幅に合わせて調整 */
+    max-width: 100%; /* 必要に応じて調整 */
+    /* 必要に応じて他のスタイルも追加 */
 }
 
 /* 画面の幅が最大519pxのときのスタイル */
@@ -495,4 +497,7 @@ textarea[name="memo"] {
         height: 200px;
     }
 
+    .top-container{
+        height: 650px;
+    }
 }

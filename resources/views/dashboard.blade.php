@@ -153,7 +153,7 @@ $(document).ready(function(){
                                 <h2>{{ $favorite->recipe_title }}</h2>
                             </a>
                             @if(!empty($favorite->memo))
-                                <p>メモ：{{ $favorite->memo }}</p>
+                                <p class="memo">メモ：{{ $favorite->memo }}</p>
                             @endif
                         </div>
                         <!-- お気に入りを削除するボタン -->
