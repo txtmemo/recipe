@@ -7,7 +7,7 @@
 }
 
 h1 {
-    margin-top: 110px; /* 50pxのマージンを追加。必要に応じて調整してください */
+    margin-top: 110px; 
     text-align: center;
 }
 
@@ -27,9 +27,9 @@ body{
     background-color: #ffcccc;
 }
 .welcome{
-    margin: 0;      /* 余白をなくして画面全体を使う */
-    height: 100vh;  /* 画面の高さに固定 */
-    overflow: hidden;  /* スクロールを防ぐ */
+    margin: 0;      
+    height: 100vh;  
+    overflow: hidden;  
 }
 .welcome-a{
     width: 230px;
@@ -59,7 +59,7 @@ body{
 html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;  /* 追加: コンテンツボックスの外側にパディングとボーダーが来るように設定 */
+    box-sizing: border-box; 
     height: 100vh;
     background-color: #ffcccc;
 }
@@ -83,25 +83,25 @@ html {
 }
 
 .container{
-    display: flex;           /* Flexboxを有効にする */
-    justify-content: center; /* 水平方向の中央にアイテムを配置 */
-    align-items: center;     /* 垂直方向の中央にアイテムを配置 */
+    display: flex;           
+    justify-content: center; 
+    align-items: center;     
     flex-direction: column; 
-    padding: 0 20px; /* 上下にはパディングを付けず、左右に20pxのパディングを付ける */
-    max-width: 1400px; /* 必要に応じて最大幅を設定することで、大きな画面ではコンテンツがあまり広がらないように制御します */
+    padding: 0 20px; 
+    max-width: 1400px; 
     min-height: 100vh;
-    margin: 0 auto; /* 左右のマージンを自動にして、コンテンツを中央に配置 */
+    margin: 0 auto; 
     background-color: #ffcccc;
     border-radius: 20px;
 }
 .top-container{
-    display: flex;           /* Flexboxを有効にする */
-    justify-content: center; /* 水平方向の中央にアイテムを配置 */
-    align-items: center;     /* 垂直方向の中央にアイテムを配置 */
+    display: flex;           
+    justify-content: center; 
+    align-items: center;     
     flex-direction: column; 
-    padding: 0 20px; /* 上下にはパディングを付けず、左右に20pxのパディングを付ける */
-    max-width: 1400px; /* 必要に応じて最大幅を設定することで、大きな画面ではコンテンツがあまり広がらないように制御します */
-    margin: 0 auto; /* 左右のマージンを自動にして、コンテンツを中央に配置 */
+    padding: 0 20px; 
+    max-width: 1400px; 
+    margin: 0 auto; 
     background-color: #ffcccc;
     border-radius: 20px;
 }
@@ -119,20 +119,20 @@ html {
 .nav-container {
     max-width: 1400px;
     margin: 0 auto;
-    width: 100%;  /* これを追加してコンテナが常にフル幅になるようにします */
+    width: 100%;  
 }
 
 .container .recipe-card a {
     text-decoration: none; 
     color: inherit;        
-    display: inline-block;        /* inline-blockを上書き */ 
-    padding: 0;            /* パディングをリセット */
-    background-color: transparent;  /* 背景色をリセット */
-    border-radius: 0;     /* ボーダーの角をリセット */
-    border: none;         /* ボーダーをリセット */
-    transition: none;     /* トランジションをリセット */
-    font-size: inherit;   /* フォントサイズを継承 */
-    margin: 0;            /* 余白をリセット */
+    display: inline-block;        
+    padding: 0;            
+    background-color: transparent;  
+    border-radius: 0;     
+    border: none;         
+    transition: none;     
+    font-size: inherit;   
+    margin: 0;            
 }
 
 .container a{
@@ -163,7 +163,7 @@ label {
     margin: 0;
     padding: 0;
     border: none;
-    vertical-align: middle; /* 他の要素との縦方向の位置を中央に合わせる */
+    vertical-align: middle; 
     position: absolute;
    top: 50%;
    left: 50%;
@@ -184,7 +184,7 @@ label {
     position: relative;
     margin-bottom: 20px;
 }
-/* 非活性状態の画像は常に表示 */
+
 .inactive-image {
     display: block;
 }
@@ -201,10 +201,10 @@ button[type="submit"] {
     margin: auto;
     display: block;
 }
-/* 活性状態の画像はデフォルトで非表示 */
 
 
-/* ラジオボタンが選択されたら、非活性状態の画像を非表示にし、活性状態の画像を表示 */
+
+/* ラジオボタンが選択されたら、画像を非表示にし、active状態の画像を表示 */
 .hidden-input:checked + .image-container .inactive-image {
     
     display: none;
@@ -216,23 +216,22 @@ button[type="submit"] {
 
 img.responsive-image {
     width: 90%;
-    height: 50%;  /* または固定の高さ */
+    height: 50%;  
     object-fit: cover;
     border-radius: 10px;
     padding-bottom: 10px;
   }
 
   .material-container {
-    max-height: calc(1.5em * 5); /* 1行の高さ(例: 1.5em) × 5行 */
-    overflow-y: auto; /* 垂直方向のスクロールを有効にする */
+    max-height: calc(1.5em * 5); 
+    overflow-y: auto; 
     
     background-color: #ffffff33;
     border-radius: 10px;
-    margin-bottom: 20px; /* 20pxの下部マージンを追加。この値は必要に応じて調整してください */
-    width: 90%;
+    margin-bottom: 20px; 
 }
 
-/* オプショナル: スクロールバーをカスタマイズするスタイルも追加できます */
+/* スクロールバーカスタマイズ */
 .material-container::-webkit-scrollbar {
     width: 10px;
 }
@@ -253,7 +252,7 @@ img.responsive-image {
 
 .button{
     display: inline-block;
-    width: 200px;            /* 固定の幅を指定 */
+    width: 200px;            
     padding: 10px 20px;
     background-color: #3498db;
     color: #ffffff;
@@ -262,7 +261,7 @@ img.responsive-image {
     border: none;
     font-size: 16px;
     text-align: center;
-    margin: 20px 0 auto; /* 20pxの上部マージンを追加。この値は必要に応じて調整してください */
+    margin: 20px 0 auto; 
 
 }
 
@@ -273,7 +272,7 @@ img.responsive-image {
 }
 
 .recipe-image {
- /*    flex-shrink: 0; 画像が縮小しないようにする */
+ 
     width: 160px;
     height: 140px;
     object-fit: cover;
@@ -301,14 +300,14 @@ img.responsive-image {
     flex-wrap: wrap;
     padding: 0;
     justify-content: flex-start;
-    margin-bottom: 20px; /* ここに希望の余白の大きさを指定します */
+    margin-bottom: 20px; 
 }
 
 .content-wrapper {
-    display: flex; /* テキストコンテンツとボタン群を横並びにする */
+    display: flex; 
     gap: 20px;
-    flex: 1; /* 余剰のスペースを取得する */
-    align-items: center; /* 中央揃え */
+    flex: 1; 
+    align-items: center; 
 }
 
 .alert-danger {
@@ -336,7 +335,7 @@ img.responsive-image {
 .recipe-text-content {
     flex-grow: 1;
     /* padding-left: 1em; */
-    flex-basis: 70%;  /* これにより、テキストは常に全体の70%を取得する */
+    flex-basis: 70%;  
 }
 
 .recipe-text-content h2{
@@ -388,8 +387,8 @@ img.responsive-image {
     margin-bottom: 2em;
     padding: 1em;
     box-shadow: 0 4px 20px 12px rgba(0, 0, 0, 0.2);
-    width: 90%; /* 画面の80%の幅に設定 */
-    max-width: 1300px; /* 幅の最大値を1200pxに設定 */
+    width: 90%; 
+    max-width: 1300px; 
 
 }
 
@@ -400,7 +399,7 @@ img.responsive-image {
 }
 
 .scroll-container {
-    max-height: calc(2.5 * 150px);  /* 例: max-height: calc(2.5 * 150px); */
+    max-height: calc(2.5 * 150px);  
     overflow-y: auto;
 }
 
@@ -410,9 +409,9 @@ img.responsive-image {
 }
 
 textarea[name="memo"] {
-    width: 100%; /* モーダルの幅に合わせて調整 */
-    max-width: 100%; /* 必要に応じて調整 */
-    /* 必要に応じて他のスタイルも追加 */
+    width: 100%; 
+    max-width: 100%; 
+    
 }
 
 /* 画面の幅が最大519pxのときのスタイル */
