@@ -59,7 +59,7 @@ body{
 html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;  
     height: 100vh;
     background-color: #ffcccc;
 }
@@ -83,19 +83,19 @@ html {
 }
 
 .container{
-    display: flex;           
+    display: flex;          
     justify-content: center; 
     align-items: center;     
     flex-direction: column; 
     padding: 0 20px; 
-    max-width: 1400px; 
+    max-width: 1400px;
     min-height: 100vh;
-    margin: 0 auto; 
+    margin: 0 auto;
     background-color: #ffcccc;
     border-radius: 20px;
 }
 .top-container{
-    display: flex;           
+    display: flex;          
     justify-content: center; 
     align-items: center;     
     flex-direction: column; 
@@ -130,7 +130,7 @@ html {
     background-color: transparent;  
     border-radius: 0;     
     border: none;         
-    transition: none;     
+    transition: none;    
     font-size: inherit;   
     margin: 0;            
 }
@@ -203,7 +203,6 @@ button[type="submit"] {
 }
 
 
-
 /* ラジオボタンが選択されたら、画像を非表示にし、active状態の画像を表示 */
 .hidden-input:checked + .image-container .inactive-image {
     
@@ -223,15 +222,16 @@ img.responsive-image {
   }
 
   .material-container {
-    max-height: calc(1.5em * 5); 
+    max-height: calc(1.5em * 5);
     overflow-y: auto; 
     
     background-color: #ffffff33;
     border-radius: 10px;
     margin-bottom: 20px; 
+    width: 90%;
 }
 
-/* スクロールバーカスタマイズ */
+/*スクロールバーを*/
 .material-container::-webkit-scrollbar {
     width: 10px;
 }
@@ -272,7 +272,7 @@ img.responsive-image {
 }
 
 .recipe-image {
- 
+ /*    flex-shrink: 0; 画像が縮小しないようにする */
     width: 160px;
     height: 140px;
     object-fit: cover;
@@ -334,8 +334,7 @@ img.responsive-image {
 
 .recipe-text-content {
     flex-grow: 1;
-    /* padding-left: 1em; */
-    flex-basis: 70%;  
+    flex-basis: 70%;
 }
 
 .recipe-text-content h2{
@@ -399,7 +398,7 @@ img.responsive-image {
 }
 
 .scroll-container {
-    max-height: calc(2.5 * 150px);  
+    max-height: calc(2.5 * 150px); 
     overflow-y: auto;
 }
 
@@ -411,7 +410,9 @@ img.responsive-image {
 textarea[name="memo"] {
     width: 100%; 
     max-width: 100%; 
-    
+}
+.memo{
+    font-weight:bold;
 }
 
 /* 画面の幅が最大519pxのときのスタイル */
@@ -481,7 +482,7 @@ textarea[name="memo"] {
         height: 170px;
     }
     .top-container{
-        height: 450px;
+        height: 440px;
     }
 }
 
@@ -496,7 +497,4 @@ textarea[name="memo"] {
         height: 200px;
     }
 
-    .top-container{
-        height: 650px;
-    }
 }
