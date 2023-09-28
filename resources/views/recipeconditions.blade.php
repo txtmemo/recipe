@@ -36,7 +36,7 @@
                             <img src="/img/rice-cooked.png" alt="Rice Active" class="active-image">
                         </label>
                     </div>
-                <button type="submit"class="button">条件を適用して検索する</button>
+                <button type="submit"class="button">条件を適用して検索</button>
             </form>
         </div>
         <script type="text/javascript">

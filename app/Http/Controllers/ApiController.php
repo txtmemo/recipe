@@ -66,12 +66,12 @@ class ApiController extends Controller
         switch ($selectedCategory) {
             case 'meat':
                 foreach ($categories as $category) {
-                    if (mb_strpos($category['categoryName'], '使わない') === false 
-                        && (mb_strpos($category['categoryName'], '肉') !== false 
-                            || mb_strpos($category['categoryName'], 'にく') !== false
-                            || mb_strpos($category['categoryName'], '豚') !== false
-                            || mb_strpos($category['categoryName'], '牛') !== false
-                            || mb_strpos($category['categoryName'], '鶏') !== false)) {
+                    $categoryUrl = $category['categoryUrl'];
+                    preg_match('!/(\d+)-!', $categoryUrl, $matches);
+                    $parentCategory = $matches[1] ?? null;
+                    //31は定番の肉料理、10は肉カテゴリ、41は中華料理カテゴリ
+                    if ($parentCategory === '31' || $parentCategory === '10'
+                        || $parentCategory === '41') {
                         $filteredCategories[] = $category;
                     }
                 }
@@ -79,15 +79,11 @@ class ApiController extends Controller
     
             case 'fish':
                 foreach ($categories as $category) {
-                    if (mb_strpos($category['categoryName'], '使わない') === false 
-                        && (mb_strpos($category['categoryName'], 'さかな') !== false
-                        || mb_strpos($category['categoryName'], '刺身') !== false
-                        || mb_strpos($category['categoryName'], 'まぐろ') !== false
-                        || mb_strpos($category['categoryName'], 'サーモン') !== false
-                        || mb_strpos($category['categoryName'], 'いか') !== false
-                        || mb_strpos($category['categoryName'], 'たこ') !== false
-                        || mb_strpos($category['categoryName'], 'アジ') !== false
-                        || mb_strpos($category['categoryName'], '魚') !== false)) {
+                    $categoryUrl = $category['categoryUrl'];
+                    preg_match('!/(\d+)-!', $categoryUrl, $matches);
+                    $parentCategory = $matches[1] ?? null;
+                    //32は定番の魚料理、11は魚カテゴリ
+                    if ($parentCategory === '32' || $parentCategory === '11') {
                         $filteredCategories[] = $category;
                     }
                 }
@@ -95,6 +91,9 @@ class ApiController extends Controller
     
             case 'rice':
                 foreach ($categories as $category) {
+                    $categoryUrl = $category['categoryUrl'];
+                    preg_match('!/(\d+)-!', $categoryUrl, $matches);
+                    $parentCategory = $matches[1] ?? null;
                     if (mb_strpos($category['categoryName'], '使わない') === false 
                         && mb_strpos($category['categoryName'], 'ケーキ') === false 
                         && mb_strpos($category['categoryName'], '米粉') === false 
@@ -102,7 +101,8 @@ class ApiController extends Controller
                         || mb_strpos($category['categoryName'], 'ご飯') !== false
                         || mb_strpos($category['categoryName'], '飯') !== false
                         || mb_strpos($category['categoryName'], 'めし') !== false
-                        || mb_strpos($category['categoryName'], 'チャーハン') !== false)) {
+                        || mb_strpos($category['categoryName'], 'チャーハン') !== false)
+                        || $parentCategory === '14') {
                         $filteredCategories[] = $category;
                     }
                 }
