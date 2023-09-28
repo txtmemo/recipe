@@ -25,6 +25,6 @@ jobs:
         # SSH接続のテスト##
         ssh -o StrictHostKeyChecking=no -i deploy_key $USER@$HOST -p $PORT -v exit
         # 実際のrsyncコマンドでデプロイ
-        rsync --checksum -avz -e "ssh -p $PORT -i deploy_key" ./ $USER@$HOST:/home/txtmemo/txtmemo-sub.com/Todo
+        rsync --checksum -avz -e "ssh -p $PORT -i deploy_key" ./ $USER@$HOST:/home/txtmemo/txtmemo.xsrv.jp/recipe
         ssh -o StrictHostKeyChecking=no -i deploy_key $USER@$HOST -p $PORT "which php"
         rm -f deploy_key
