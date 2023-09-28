@@ -160,7 +160,9 @@ $(document).ready(function(){
                         <form action="{{ route('favorite.delete', $favorite->recipe_id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="delete-button">お気に入り削除</button>
+                            <button type="submit" class="delete-button" onclick="return confirm('お気に入りを削除しますか？');">
+                                お気に入り削除
+                            </button>
                         </form>
                 </li>
             @endforeach
