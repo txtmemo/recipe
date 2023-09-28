@@ -1,0 +1,30 @@
+name: Deploy to Production Server
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to server
+      env:
+        DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        HOST: ${{ secrets.SERVER_HOST }}
+        USER: ${{ secrets.SERVER_USERNAME }}
+        PORT: ${{ secrets.SSH_PORT }}
+      run: |
+        echo "$DEPLOY_KEY" > deploy_key
+        chmod 600 deploy_key
+        # SSH接続のテスト
+        ssh -o StrictHostKeyChecking=no -i deploy_key $USER@$HOST -p $PORT -v exit
+        # 実際のrsyncコマンドでデプロイ
+        rsync --checksum -avz -e "ssh -p $PORT -i deploy_key" ./ $USER@$HOST:/home/txtmemo/txtmemo-sub.com/Todo
+        ssh -o StrictHostKeyChecking=no -i deploy_key $USER@$HOST -p $PORT "which php"
+        rm -f deploy_key
