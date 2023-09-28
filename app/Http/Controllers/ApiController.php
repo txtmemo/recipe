@@ -94,15 +94,8 @@ class ApiController extends Controller
                     $categoryUrl = $category['categoryUrl'];
                     preg_match('!/(\d+)-!', $categoryUrl, $matches);
                     $parentCategory = $matches[1] ?? null;
-                    if (mb_strpos($category['categoryName'], '使わない') === false 
-                        && mb_strpos($category['categoryName'], 'ケーキ') === false 
-                        && mb_strpos($category['categoryName'], '米粉') === false 
-                        && (mb_strpos($category['categoryName'], '米') !== false 
-                        || mb_strpos($category['categoryName'], 'ご飯') !== false
-                        || mb_strpos($category['categoryName'], '飯') !== false
-                        || mb_strpos($category['categoryName'], 'めし') !== false
-                        || mb_strpos($category['categoryName'], 'チャーハン') !== false)
-                        || $parentCategory === '14') {
+                    //14はごはんカテゴリ
+                    if ($parentCategory === '14') {
                         $filteredCategories[] = $category;
                     }
                 }
