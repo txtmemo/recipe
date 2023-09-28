@@ -22,7 +22,7 @@ jobs:
       run: |
         echo "$DEPLOY_KEY" > deploy_key
         chmod 600 deploy_key
-        # SSH接続のテスト
+        # SSH接続のテスト##
         ssh -o StrictHostKeyChecking=no -i deploy_key $USER@$HOST -p $PORT -v exit
         # 実際のrsyncコマンドでデプロイ
         rsync --checksum -avz -e "ssh -p $PORT -i deploy_key" ./ $USER@$HOST:/home/txtmemo/txtmemo-sub.com/Todo
