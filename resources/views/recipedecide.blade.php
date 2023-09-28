@@ -103,7 +103,7 @@
             </ul>
         </div>
     <div class="flex-container">
-        <a id="save-recipe-history-btn" class="button" href="{{ $randomItem['recipeUrl'] }}" target="_blank" class="centered-link">このレシピにする</a>
+        <a id="save-recipe-history-btn" class="button" href="{{ $randomItem['recipeUrl'] }}" target="_blank" rel=”noopener” class="centered-link">このレシピにする</a>
         <a class="button" href="{{ route('clear_session_and_redirect') }}">もう一度レシピを選ぶ</a>
     </div>
 </div>
