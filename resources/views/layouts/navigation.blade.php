@@ -109,11 +109,11 @@
                     {{ __('プロフィール情報') }}
                 </x-responsive-nav-link>
 
-                <x-responsive-nav-link :href="route('profile.edit')">
+                <x-responsive-nav-link :href="route('dashboard')">
                     {{ __('お気に入り一覧') }}
                 </x-responsive-nav-link>
 
-                <x-responsive-nav-link :href="route('profile.edit')">
+                <x-responsive-nav-link :href="route('dashboard')">
                     {{ __('履歴一覧') }}
                 </x-responsive-nav-link>
             
