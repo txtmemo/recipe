@@ -4,7 +4,7 @@
     @yield('head')
     @include('layouts.navbar')
     <body class="welcome">
-    <h1>今日の献立ジェネレーター</h1>
+    <h1>今日の献立<br>ジェネレーター</h1>
         <div class="about"> 
             <h2 style="text-align:center;">About</h2>
             <div class="text-container">
