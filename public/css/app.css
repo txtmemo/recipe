@@ -455,7 +455,7 @@ textarea[name="memo"] {
     }
 }
 
-/* 画面の幅が768px以上のときのスタイル */
+/* 画面の幅が768px以上のときのスタイル *//* 画面の幅が768px以上のときのスタイル */
 @media (min-width: 768px) {
     .modal-dialog {
         max-width: 80%;
