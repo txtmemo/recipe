@@ -92,7 +92,7 @@
 
 <div class="container">
     <h1>本日のレシピ</h1>
-    <h2 class="text-center">{{ $randomItem['recipeTitle'] }}</h2>
+    <h3 class="text-center">{{ $randomItem['recipeTitle'] }}</h3>
     <img src="{{ $randomItem['foodImageUrl'] }}" alt="レシピの画像" class="responsive-image">
     <h3 class="text-center">必要材料</h3>
         <div class="material-container">
